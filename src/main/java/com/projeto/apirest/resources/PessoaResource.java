@@ -37,13 +37,13 @@ public class PessoaResource {
 	
 	@GetMapping("/pessoas/{id}")
 	@ApiOperation(value="Busca uma pessoa por ID")
-	public Pessoa listaPessoaUnica(@PathVariable(value="id") long id) {
+	public Pessoa buscaPessoa(@PathVariable(value="id") long id) {
 		return pessoaRepository.findById(id);
 	}
 	
 	@PostMapping("/pessoas")
 	@ApiOperation(value="Cadastra uma pessoa")
-	public Pessoa salvaPessoa(@RequestBody Pessoa pessoa) {
+	public Pessoa cadastraPessoa(@RequestBody Pessoa pessoa) {
 		return pessoaRepository.save(pessoa);
 	}
 	
