@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.sun.istack.NotNull;
+
 @Entity //define entidade
 @Table(name="PESSOA") //define table como nome 'pessoa'
 public class Pessoa implements Serializable{
@@ -18,6 +20,7 @@ public class Pessoa implements Serializable{
 	@GeneratedValue(strategy=GenerationType.AUTO) //auto incremento de ID
 	private long id;
 	
+	@NotNull
 	private String doc, nome;
 
 	public long getId() {
