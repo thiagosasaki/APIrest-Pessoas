@@ -37,7 +37,8 @@ public class PessoaResource {
 	
 	@GetMapping("/pessoas/{id}")
 	@ApiOperation(value="Busca uma pessoa por ID")
-	public Pessoa bus(@PathVariable(value="id") long id) {
+	public Pessoa bus
+	(@PathVariable(value="id") long id) {
 		return pessoaRepository.findById(id);
 	}
 	
