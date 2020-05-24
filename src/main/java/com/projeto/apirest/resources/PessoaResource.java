@@ -49,11 +49,17 @@ public class PessoaResource {
 		return pessoaRepository.save(pessoa);
 	}
 	
-	@DeleteMapping("/pessoas")
+	@DeleteMapping("/pessoas/{doc}")
+	@ApiOperation(value="Deleta uma pessoa cadastrada")
+	public Pessoa deleteByDoc (@PathVariable(value="doc") String doc) {
+		return pessoaRepository.deleteByDoc(doc);
+	}
+	
+	/*@DeleteMapping("/pessoas")
 	@ApiOperation(value="Deleta uma pessoa cadastrada")
 	public void deletaPessoa(@RequestBody Pessoa pessoa) {
 		pessoaRepository.delete(pessoa);
-	}
+	}*/
 	
 	@PutMapping("/pessoas")
 	@ApiOperation(value="Atualiza uma pessoa cadastrada")
