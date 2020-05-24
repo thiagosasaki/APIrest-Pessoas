@@ -8,5 +8,5 @@ import com.projeto.apirest.models.Pessoa;
 
 public interface PessoaRepository extends JpaRepository <Pessoa, String> {
 	
-	Optional<Pessoa> findByDoc(String doc); //jpa já associa o retorno automaticamente
+	Pessoa findByDoc(String doc); //jpa já associa o retorno automaticamente
 }

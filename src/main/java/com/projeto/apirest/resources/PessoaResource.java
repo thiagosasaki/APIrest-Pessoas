@@ -38,7 +38,7 @@ public class PessoaResource {
 	
 	@GetMapping("/pessoas/{doc}")
 	@ApiOperation(value="Busca uma pessoa por documento")
-	public Optional<Pessoa> bus
+	public Pessoa bus
 	(@PathVariable(value="doc") String doc) {
 		return pessoaRepository.findByDoc(doc);
 	}

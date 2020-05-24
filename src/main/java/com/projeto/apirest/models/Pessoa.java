@@ -20,8 +20,11 @@ public class Pessoa implements Serializable{
 	@GeneratedValue(strategy=GenerationType.AUTO) //auto incremento de ID
 	private long id;*/
 	
+	@Id
+	private String doc;
+	
 	@NotNull
-	private String doc, nome;
+	private String nome;
 	
 	private String email, telefone;
 	
