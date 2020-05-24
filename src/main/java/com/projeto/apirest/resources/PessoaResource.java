@@ -51,8 +51,11 @@ public class PessoaResource {
 	
 	@DeleteMapping("/pessoas/{doc}")
 	@ApiOperation(value="Deleta uma pessoa cadastrada")
-	public Pessoa deleteByDoc (@PathVariable(value="doc") String doc) {
-		return pessoaRepository.deleteByDoc(doc);
+	public void deletePessoa (@PathVariable(value="doc") String doc) {
+		Pessoa pessoa;
+		pessoa = pessoaRepository.findByDoc(doc);
+		
+		pessoaRepository.delete(pessoa);
 	}
 	
 	/*@DeleteMapping("/pessoas")
