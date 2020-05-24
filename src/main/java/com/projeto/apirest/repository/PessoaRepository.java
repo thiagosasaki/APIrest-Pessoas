@@ -1,10 +1,12 @@
 package com.projeto.apirest.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.projeto.apirest.models.Pessoa;
 
-public interface PessoaRepository extends JpaRepository <Pessoa, Long> {
+public interface PessoaRepository extends JpaRepository <Pessoa, String> {
 	
-	Pessoa findById(long id); //jpa já associa o retorno automaticamente
+	Optional<Pessoa> findByDoc(String doc); //jpa já associa o retorno automaticamente
 }

@@ -16,20 +16,17 @@ public class Pessoa implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	@Id
+	/*@Id
 	@GeneratedValue(strategy=GenerationType.AUTO) //auto incremento de ID
-	private long id;
+	private long id;*/
 	
 	@NotNull
 	private String doc, nome;
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
+	
+	private String email, telefone;
+	
+	@NotNull
+	private char sexo;
 
 	public String getDoc() {
 		return doc;
@@ -47,5 +44,28 @@ public class Pessoa implements Serializable{
 		this.nome = nome;
 	}
 
-	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public char getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(char sexo) {
+		this.sexo = sexo;
+	}
+		
 }

@@ -1,6 +1,7 @@
 package com.projeto.apirest.resources;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -35,11 +36,11 @@ public class PessoaResource {
 		return pessoaRepository.findAll();
 	}
 	
-	@GetMapping("/pessoas/{id}")
-	@ApiOperation(value="Busca uma pessoa por ID")
-	public Pessoa bus
-	(@PathVariable(value="id") long id) {
-		return pessoaRepository.findById(id);
+	@GetMapping("/pessoas/{doc}")
+	@ApiOperation(value="Busca uma pessoa por documento")
+	public Optional<Pessoa> bus
+	(@PathVariable(value="doc") String doc) {
+		return pessoaRepository.findByDoc(doc);
 	}
 	
 	@PostMapping("/pessoas")
